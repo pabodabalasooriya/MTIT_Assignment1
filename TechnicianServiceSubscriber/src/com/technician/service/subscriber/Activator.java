@@ -25,7 +25,7 @@ public class Activator implements BundleActivator {
 		int correct = 1;
 		String pname = "",page = "",dname = "", medName,medDosage,medDuration,testName;
 		try {
-		System.out.println("=========welcome to Doctor Consultation Service========");
+		System.out.println("=========welcome to Technician Consultation Service========");
 		
 		Activator.context = bundleContext;
 		serviceReferenceDoc = bundleContext.getServiceReference(TechnicianService.class.getName());
@@ -58,52 +58,52 @@ public class Activator implements BundleActivator {
 			System.out.println("Please enter your name : ");
 			dname = scanner.next();
 			
-			System.out.println("===========================Welcome Dr. "+ dname + " =============================== ");
+			System.out.println("===========================Welcome Mr.. "+ dname + " =============================== ");
 			
 			do {
 				System.out.println("Choose your preference by typing the relavent number:");
-				System.out.println("      1 - Prescribing medicine. ");
-				System.out.println("      2 - Prescribing tests. ");
+				System.out.println("      1 - Package upgrade. ");
+				System.out.println("      2 - Packaging tests. ");
 				System.out.println("      3 - View daily history. ");
 				option = scanner.nextInt();
 				
 				if(option == 1 || option == 2) {
-					System.out.println("Enter the name of the patient:");
+					System.out.println("Enter the name of the customer:");
 					pname = scanner.next();
 					
-					System.out.println("Enter the age of the patient:");
+					System.out.println("Enter the age of the customer:");
 					page = scanner.next();
 					
 					doctorService.keepCustomerSummary(pname);
 				}
 				
 				if(option == 1) {
-					System.out.println("====Welcome to Prescribing medicine====");
+					System.out.println("====Welcome to P upgrade====");
 					System.out.println();
 					
 					
 				do {
 			
-					System.out.println("Enter Name of the medicine : ");
+					System.out.println("Enter Name of the upgrade : ");
 					medName = scanner.next();
 					
-					System.out.println("Enter dosage of the medicine : ");
+					System.out.println("Enter dosage of the upgrade : ");
 					medDosage = scanner.next();
 					
-					System.out.println("Enter duration of the medicine : ");
+					System.out.println("Enter duration of the upgrade : ");
 					medDuration = scanner.next();
 					
 					doctorService.prescribeMedicine(medName,medDosage,medDuration);
-					System.out.println("Do  you want to continue with prescribing medicine? ");
+					System.out.println("Do  you want to continue with packaging upgrade? ");
 					System.out.println("   Press 1 to continue");
-					System.out.println("   Press 0 to exit from prescribing medicine");
+					System.out.println("   Press 0 to exit from packaging medicine");
 					statMed = scanner.nextInt();
 					
 					}while(statMed == 1);
 					
 					doctorService.viewMedicinePrescription(pname,page,dname);
 					
-					System.out.println("Do you want to print the prescription? ");
+					System.out.println("Do you want to print the packaging? ");
 					System.out.println("   1 - yes");
 					System.out.println("   2 - no");
 					statPrint = scanner.nextInt();
@@ -118,7 +118,7 @@ public class Activator implements BundleActivator {
 				}
 				
 				else if(option == 2) {
-					System.out.println("====Welcome to prescribing test====");
+					System.out.println("====Welcome to packaging test====");
 					System.out.println();
 					
 					do {
@@ -126,7 +126,7 @@ public class Activator implements BundleActivator {
 						testName = scanner.next();
 						
 						doctorService.prescribeTest(testName);
-						System.out.println("Do  you want to continue with prescribing test? ");
+						System.out.println("Do  you want to continue with packaging test? ");
 						System.out.println("   Press 1 to continue");
 						System.out.println("   Press 0 to exit from prescribing test");
 						statMed = scanner.nextInt();
@@ -136,7 +136,7 @@ public class Activator implements BundleActivator {
 					
 						doctorService.viewPrescribedtest(pname, page,dname);
 						
-						System.out.println("Do you want to print the test prescription? ");
+						System.out.println("Do you want to print the test package? ");
 						System.out.println("   1 - yes");
 						System.out.println("   2 - no");
 						statPrint = scanner.nextInt();
@@ -169,7 +169,7 @@ public class Activator implements BundleActivator {
 			
 			}while(status == 1);
 				
-			System.out.println("Thank you for using Doctor Consultation Service");
+			System.out.println("Thank you for using Technician Consultation Service");
 			System.out.println("Good Bye!....");
 			scanner.close();
 		
@@ -180,7 +180,7 @@ public class Activator implements BundleActivator {
 
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
-		System.out.println("Docotr channeling service stop");
+		System.out.println("Technician hiring service stop");
 	}
 
 }
