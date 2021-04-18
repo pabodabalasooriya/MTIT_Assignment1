@@ -44,7 +44,7 @@ public class Activator implements BundleActivator {
 		// Medicine medi = new Medicine();
 		 StoreService pharmacyService = new StoreServiceImpl();
 		 
-		 System.out.println("------- Welcome to ABC Hospital Pharmacy System ---------");
+		 System.out.println("------- Welcome to Auto Miraj Store System ---------");
 		  int i =0;
 		  //START PHARMACY SYSTEM SYSTEM
 		  do {
@@ -59,7 +59,7 @@ public class Activator implements BundleActivator {
 		  //SELECT OPTION 01 => PURCHES MEDICINE
 		  if(option == 1) {
 			  
-			  System.out.print("Please Enter the Patient Name - ");
+			  System.out.print("Please Enter the Customer Name - ");
 			  String patientName = myscanner.next();
 			  //CALL ADD PATIENTS METHOD
 			  service.addCustomers(patientName);
@@ -67,22 +67,22 @@ public class Activator implements BundleActivator {
 			  int j=0;
 			  //START ADD MEDICINE
 			  do {
-			  System.out.print("Please Enter the Medicine Name - ");
+			  System.out.print("Please Enter the Upgrade Name - ");
 			  String medicineName = myscanner.next();
 			  
-			  System.out.print("Please Enter the Medicine Dose - ");
+			  System.out.print("Please Enter the Upgrade Dose - ");
 			  String medicineDose = myscanner.next();
 			  
-			  System.out.print("Please Enter the Tablet Price - ");
+			  System.out.print("Please Enter the Spare Parts Price - ");
 			  int medicinePrice = myscanner.nextInt();
 			  
-			  System.out.print("Please Enter the Tablet Count - ");
+			  System.out.print("Please Enter the Spare Parts Count - ");
 			  int medicineCount = myscanner.nextInt();
 			  //CALL PURCHESMEDICINE
 			  service.purchesUpgrades(medicineName,medicineDose,medicinePrice,medicineCount); 
 			  
 			  //ADD ANOTHER MEDICINE 
-			  System.out.print("Do you want add medicine?(Y or N) - ");
+			  System.out.print("Do you want to upgrade?(Y or N) - ");
 			 String optionContinue = myscanner.next();
 			 if(optionContinue.equalsIgnoreCase("y") || optionContinue.equalsIgnoreCase("Y") ) {
 				  j = -1;
@@ -105,16 +105,16 @@ public class Activator implements BundleActivator {
 		//SELECT OPTION 02 => PHARMACY INVENTORY  
 		  else if(option == 2) {
 			  
-			  System.out.println("============= ABC Hospital Pharmacy Inventory ===============");
+			  System.out.println("============= Auto Miraj Store Inventory ===============");
 			  System.out.println("Please Select Your Options");
 			  System.out.println("1. My Current Inventory");
-			  System.out.println("2. Add Medicine");
+			  System.out.println("2. Upgrade");
 			  
 			  int IOption = myscanner.nextInt();
 			  if(IOption == 1)
 				  	service.getUpgradeList();
 			  else { 
-				  System.out.print("Enter Your Medicine - ");
+				  System.out.print("Enter Your Upgrade - ");
 				  
 				  String medicineName = myscanner.next();
 				  service.addUpgradeToMyInventory(medicineName);
@@ -171,7 +171,7 @@ public class Activator implements BundleActivator {
 
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
-		System.out.println("Pharmacy Sevice Stop");
+		System.out.println("Store Sevice Stop");
 	}
 
 }

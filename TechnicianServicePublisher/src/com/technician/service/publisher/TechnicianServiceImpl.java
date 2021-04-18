@@ -39,7 +39,7 @@ public class TechnicianServiceImpl implements TechnicianService{
 	public void viewHistory() {
 		
 		System.out.println("================================View Daily Summary=================================");
-		System.out.println("Patients for the day : ");
+		System.out.println("Customers for the day : ");
 		
 		for(int i = 0; i <= (dailySummary.size() - 1); i++) {
 			System.out.println(dailySummary.get(i));
@@ -48,7 +48,7 @@ public class TechnicianServiceImpl implements TechnicianService{
 		}
 		System.out.println();
 		System.out.println("-----------------------------------------------------------------------------------");
-		System.out.println("Total number of patients : "+count);
+		System.out.println("Total number of customers : "+count);
 		System.out.println();
 		System.out.println("===================================================================================");
 		
@@ -66,13 +66,13 @@ public class TechnicianServiceImpl implements TechnicianService{
 			
 			FileWriter fileWriter = new FileWriter("F:\\sliit\\y3 s1\\new\\SA\\labs\\generated reports\\prescription.txt");
 			PrintWriter printWriter = new PrintWriter(fileWriter);
-			printWriter.println("===========================Medicine Prescription============================");
+			printWriter.println("===========================Upgrade Prescription============================");
 			printWriter.println();
-			printWriter.println("Prescribed by : Dr. "+dname);
-			printWriter.println("Patient Name : "+ pname + "                                 age: "+ page + "yr");
+			printWriter.println("Packaged by : mR.. "+dname);
+			printWriter.println("Customer Name : "+ pname + "                                 age: "+ page + "yr");
 			printWriter.println();
 			printWriter.println();
-			printWriter.println("Medicine                Dosage        Duration"  );
+			printWriter.println("Upgrade                Dosage        Duration"  );
 
 			for(int i = 0; i<= medicine.size()- 1; i++ ) {
 				printWriter.println(medicine.get(i).getName() + "                      " + medicine.get(i).getDose() + "              " + medicine.get(i).getDuration());
@@ -87,7 +87,7 @@ public class TechnicianServiceImpl implements TechnicianService{
 			System.out.println("An error occured");
 		}
 		
-		System.out.println("Prescription print successfully");
+		System.out.println("Package print successfully");
 		System.out.println();
 		
 	}
@@ -100,8 +100,8 @@ public class TechnicianServiceImpl implements TechnicianService{
 		PrintWriter printWriter = new PrintWriter(fileWriter);
 		printWriter.println("===========================Test Prescription============================");
 		printWriter.println();
-		printWriter.println("Prescribed by: Dr. "+dname);
-		printWriter.println("Patient Name : "+ pname + "                                 age: "+ page+ " yr");
+		printWriter.println("Packaged by: Mr. "+dname);
+		printWriter.println("Customer Name : "+ pname + "                                 age: "+ page+ " yr");
 		printWriter.println();
 		
 		
@@ -119,7 +119,7 @@ public class TechnicianServiceImpl implements TechnicianService{
 			System.out.println("An error has occured");
 		}
 		
-		System.out.println("Prescription print successfully");
+		System.out.println("Package print successfully");
 		System.out.println();
 	}
 
@@ -127,12 +127,12 @@ public class TechnicianServiceImpl implements TechnicianService{
 
 	@Override
 	public void viewMedicinePrescription(String pname, String page, String dname) {
-		System.out.println("===========================Medicine Prescription============================");
+		System.out.println("===========================Upgrade Prescription============================");
 		System.out.println();
-		System.out.println("Prescribed by : Dr. "+dname);
-		System.out.println("Patient Name : "+ pname + "                                 age: "+ page + "yr");
+		System.out.println("Packaged by : Mr. "+dname);
+		System.out.println("Customer Name : "+ pname + "                                 age: "+ page + "yr");
 		System.out.println();
-		System.out.println("Medicine                Dosage        Duration");
+		System.out.println("Upgrade                Dosage        Duration");
 		for(int i = 0; i<= medicine.size()- 1; i++ ) {
 			System.out.println(medicine.get(i).getName() + "                      " + medicine.get(i).getDose() + "             " + medicine.get(i).getDuration());
 		}
@@ -150,8 +150,8 @@ public class TechnicianServiceImpl implements TechnicianService{
 	public void viewPrescribedtest(String pname, String page, String dname) {
 		System.out.println("===========================Test Prescription============================");
 		System.out.println();
-		System.out.println("Prescribed by: Dr. "+dname);
-		System.out.println("Patient Name : "+ pname + "                                 age: "+ page+ " yr");
+		System.out.println("Packaged by: Mr. "+dname);
+		System.out.println("Customer Name : "+ pname + "                                 age: "+ page+ " yr");
 		System.out.println();
 		
 		for(int i = 0; i<= test.size()-1; i++ ) {

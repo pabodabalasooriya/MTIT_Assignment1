@@ -20,17 +20,17 @@ public class CheckpointServiceImpl implements CheckpointService {
 	public void displayReport() {
 		
 		
-		System.out.println("====== Medical Reports ======");
-		System.out.println("--1. CBC");
-		System.out.println("--2. BMP");
-		System.out.println("--3. STD");
-		System.out.println("--4. CMP");
-		System.out.println("--5. Lipid Panel");
-		System.out.println("--6. Liver Panel");
-		System.out.println("--7. Thyroid Stimulating Hormon");
-		System.out.println("--8. Hemoglobin A1C");
-		System.out.println("--9. Urinalysis");
-		System.out.println("--10. Cultures");
+		System.out.println("====== Service Reports ======");
+		System.out.println("--1. Tires & Wheels Grooming");
+		System.out.println("--2. Exterior Waxing");
+		System.out.println("--3. Exterior Waxing");
+		System.out.println("--4. Undercarriage Degreasing");
+		System.out.println("--5. Vehicle Inspection");
+		System.out.println("--6. Engine Degreasing");
+		System.out.println("--7. Interior Detailing");
+		System.out.println("--8. Exterior Detailing");
+		System.out.println("--9. Wash & Vacuum");
+		System.out.println("--10. Tyre & Spare Parts");
 		
 	}
 
@@ -100,9 +100,9 @@ public class CheckpointServiceImpl implements CheckpointService {
 			
 			FileWriter fileWriter = new FileWriter("C:\\Users\\Hp\\Desktop\\LabReport.txt");
 			PrintWriter printWriter = new PrintWriter(fileWriter);
-			printWriter.println("===========================Lab Report============================");
-			printWriter.println("Order Investigation by : Dr. "+doctorName);
-			printWriter.println("Patient Name : "+ patientName + "                                 age: "+ patientAge + "yr");
+			printWriter.println("===========================Checkpoint Report============================");
+			printWriter.println("Order Investigation by : Mr. "+doctorName);
+			printWriter.println("Customer Name : "+ patientName + "                                 age: "+ patientAge + "yr");
 			for(int i = 0; i<= checkpointName.size()- 1; i++ ) {
 				printWriter.println(checkpointName.get(i).getLabtestType() + "                				Test Result :" + checkpointResult.get(i));
 			}
@@ -121,10 +121,10 @@ public class CheckpointServiceImpl implements CheckpointService {
 	public void viewCheckpointReport(String PatientName, int patientAge, String DoctorName ,String MLTname){
 
 		// TODO Auto-generated method stub
-		System.out.println("=================================Lab Report=================================");
+		System.out.println("=================================Checkpoint Report=================================");
 		System.out.println("");
-		System.out.println("Requested by : Dr. "+DoctorName);
-		System.out.println("Patient Name : "+ PatientName +"                                 age: "+ patientAge + "yr");
+		System.out.println("Requested by : Mr. "+DoctorName);
+		System.out.println("Customer Name : "+ PatientName +"                                 age: "+ patientAge + "yr");
 		System.out.println("");
 		for(int i = 0; i<= checkpointName.size()- 1; i++ ) {
 			System.out.println(checkpointName.get(i).getLabtestType() + "                                        test Result: "+ checkpointResult.get(i));
@@ -151,8 +151,8 @@ public class CheckpointServiceImpl implements CheckpointService {
 		int Pcount = 0, Tcount = 0;
 		
 		
-		System.out.println("================================View Lab Report Summary=================================");
-		System.out.println("Patient Names for the day : ");
+		System.out.println("================================View Checkpoint Report Summary=================================");
+		System.out.println("Customer Names for the day : ");
 		
 		for(int i = 0; i <= (checkpointHistory.size() - 1); i++) {
 			System.out.println(i+1+"."+checkpointHistory.get(i));
@@ -166,7 +166,7 @@ public class CheckpointServiceImpl implements CheckpointService {
 						}
 		System.out.println("");
 		System.out.println("-----------------------------------------------------------------------------------");
-		System.out.println("Total number of patients : "+ Pcount+"           Total number of patients : "+Tcount );
+		System.out.println("Total number of customers : "+ Pcount+"           Total number of customers : "+Tcount );
 		System.out.println();
 		System.out.println("===================================================================================");
 		

@@ -27,12 +27,12 @@ public class Activator implements BundleActivator {
 		Scanner myscanner = new Scanner(System.in);
 				
 		
-		System.out.println("========= Welcome to ABC Hospital Lab Service =========");
+		System.out.println("========= Welcome to Auto Miraj Checkpoint Service =========");
 		System.out.println("");
-		System.out.println("Please Log in to the LAB");
+		System.out.println("Please Log in to the Checkpoint");
 		int correct;
 		do {
-			System.out.print("Please enter medical laboratory technician Name : ");
+			System.out.print("Please enter Checkpoint technician Name : ");
 			MLTname = myscanner.next();
 			
 			
@@ -61,27 +61,27 @@ public class Activator implements BundleActivator {
 				System.out.println("===========================Welcome MLT. "+ MLTname + " =============================== ");
 				
 				do {
-					System.out.println("Choose your Lab Service number:");
+					System.out.println("Choose your Checkpoint Service number:");
 					System.out.println("      1 - Test Medical Report. ");
 					System.out.println("      2 - View Test List. ");
-					System.out.println("      3 - View Patient's Report history. ");
-					System.out.println("Enter Lab Service Number: ");
+					System.out.println("      3 - View Customer's Report history. ");
+					System.out.println("Enter Checkpoint Service Number: ");
 					LabserviceType = myscanner.nextInt();
 					
 					if(LabserviceType == 1) {
-						System.out.print("Enter the name of the patient : ");
+						System.out.print("Enter the name of the customer : ");
 						customerName = myscanner.next();
 						
 					
-						System.out.print("Enter the age of the patient : ");
+						System.out.print("Enter the age of the customer : ");
 						patientAge = myscanner.nextInt();
-						System.out.print("Enter the name of the Doctor : ");
+						System.out.print("Enter the name of the Technician : ");
 						techinicianName = myscanner.next();
 						System.out.println("");
 						
 						service.checkpointReportHistory(customerName);
 					
-						System.out.println("===========================Welcome to ABC Hospital Laboratory===========================");
+						System.out.println("===========================Welcome to Auto Miraj Checkpoint===========================");
 						System.out.println();
 					
 						service.displayReport();
@@ -90,65 +90,67 @@ public class Activator implements BundleActivator {
 							//System.out.println("enter test: ");
 							//LabtestType = myscanner.nextInt();
 						
-							System.out.println("Enter Lab Test Type : ");
+							System.out.println("Enter Checkpoint Test Type : ");
 							int testtype = myscanner.nextInt();
 							
 								if(testtype == 1){
 									
-									//service.LabTestHistory("CBC");
-									service.selectReportType("CBC");
+									//service.LabTestHistory("Tires & Wheels Grooming");
+									service.selectReportType("Tires & Wheels Grooming");
 								}else if(testtype == 2) {
 									
-									//service.LabTestHistory("BMP");
-									service.selectReportType("BMP");
+									//service.LabTestHistory("
+									Exterior Waxing");
+									service.selectReportType("\r\n" + 
+											"Exterior Waxing");
 								}else if(testtype == 3) {
 									
-									//service.LabTestHistory("STD");
-									service.selectReportType("STD");
+									//service.LabTestHistory("Windscreen Treatment");
+									service.selectReportType("Windscreen Treatment");
 								}else if(testtype == 4){
 									
-									//service.LabTestHistory("CMP");
-									service.selectReportType("CMP");
+									//service.LabTestHistory("Undercarriage Degreasing");
+									service.selectReportType("Undercarriage Degreasing");
 								}else if(testtype == 5) {
 									
-								//	service.LabTestHistory("Lipid Panel");
-									service.selectReportType("Lipid Panel");
+								//	service.LabTestHistory("Vehicle Inspection");
+									service.selectReportType("Vehicle Inspection");
 								}else if(testtype == 6) {
 									
-								//	service.LabTestHistory("Liver Panel");
-									service.selectReportType("Liver Panel");
+								//	service.LabTestHistory("Engine Degreasing");
+									service.selectReportType("Engine Degreasing");
 								}else if (testtype == 7) {
 									
-								//	service.LabTestHistory("Thyroid Stimulating Hormon");
-									service.selectReportType("Thyroid Stimulating Hormon");
+								//	service.LabTestHistory("Interior Detailing");
+									service.selectReportType("Interior Detailing");
 								}else if (testtype == 8) {
 									
-									//service.LabTestHistory("Hemoglobin A1C");
-									service.selectReportType("Hemoglobin A1C");
+									//service.LabTestHistory("Exterior Detailing");
+									service.selectReportType("Exterior Detailing");
 								}else if (testtype == 9) {
 									
-								//	service.LabTestHistory("Urinalysis");
-									service.selectReportType("Urinalysis");
+								//	service.LabTestHistory("Wash & Vacuum");
+									service.selectReportType("Wash & Vacuum");
 								}else if(testtype == 10){
 									
-								//	service.LabTestHistory("Cultures");
-									service.selectReportType("Cultures");
+								//	service.LabTestHistory("Tyre & Spare Parts");
+									service.selectReportType("Tyre & Spare Parts");
 								}else{
 									
-									System.out.println(" Please Contact MLT for any other Lab Reports");
+									System.out.println(" Please Contact MLT for any other Checkpoint Reports");
 								}
 						
 								
-						System.out.println("Do  you want to add Another Lab service..? ");
+						System.out.println("Do  you want to add Another Checkpoint service..? ");
 						System.out.println("   Press 1 to continue");
-						System.out.println("   Press 0 to exit from ABC Hospital Laboratory");
+						System.out.println("   Press 0 to exit from Auto Miraj Checkpoint");
 						command = myscanner.nextInt();
 						
 						
 						}while(command == 1);
 						
 						
-						System.out.println("Do you want to View the Lab Report? ");
+						System.out.println("Do you want to View the Checkpoint Report? ");
 						System.out.println("   1 - yes");
 						System.out.println("   0 - no");
 						int ViewCommand = myscanner.nextInt();
@@ -160,7 +162,7 @@ public class Activator implements BundleActivator {
 						}
 						
 						
-						System.out.println("Do you want to print the Lab Report? ");
+						System.out.println("Do you want to print the Checkpoint Report? ");
 						System.out.println("   1 - yes");
 						System.out.println("   0 - no");
 						printCommand = myscanner.nextInt();
@@ -174,14 +176,14 @@ public class Activator implements BundleActivator {
 						
 						
 					}else if(LabserviceType == 2) {
-						System.out.println("====ABC Hospital laboratory Test List====");
+						System.out.println("====Auto Miraj Checkpoint Test List====");
 						System.out.println();
 						service.displayReport();
 						
 							
 						
 					}else if(LabserviceType == 3) {
-						System.out.println("=====Welcome to Lab Report Summary====");
+						System.out.println("=====Welcome to Checkpoint Report Summary====");
 						System.out.println();
 						service.viewCheckpointReportHistory();
 						
@@ -193,7 +195,7 @@ public class Activator implements BundleActivator {
 				
 					System.out.println("Do you want to switch to another service?");
 					System.out.println("   Press 1 to continue");
-					System.out.println("   Press 0 to exit from Laboratory Service");
+					System.out.println("   Press 0 to exit from Checkpoint Service");
 					ContinueCommand = myscanner.nextInt();
 					
 				
@@ -206,7 +208,7 @@ public class Activator implements BundleActivator {
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
 		System.out.println();
-		System.out.println("===========================ABC Hospital Laboratory Service Stoped===========================");
+		System.out.println("===========================Auto Miraj Service Stoped===========================");
 	}
 
 }
