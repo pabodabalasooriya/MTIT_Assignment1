@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PharmacyServiceSubscriber
+Bundle-SymbolicName: PharmacyServiceSubscriber
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.pharmacy.service.subscriber.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: PharmacyServiceSubscriber
+Import-Package: com.pharmacy.service.publisher,
+ org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: osgi

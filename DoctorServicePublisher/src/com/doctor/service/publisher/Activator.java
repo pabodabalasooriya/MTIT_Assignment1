@@ -1,4 +1,4 @@
-package com.admin.service.publisher;
+package com.doctor.service.publisher;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -6,7 +6,7 @@ import org.osgi.framework.ServiceRegistration;
 
 public class Activator implements BundleActivator {
 
-	ServiceRegistration adminreg;
+	ServiceRegistration serviceRegistrationDoctor;
 	private static BundleContext context;
 
 	static BundleContext getContext() {
@@ -14,16 +14,22 @@ public class Activator implements BundleActivator {
 	}
 
 	public void start(BundleContext bundleContext) throws Exception {
-		System.out.println(" Admin Service Publisher Start");
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("Doctor Service start");
+		System.out.println();
 		Activator.context = bundleContext;
-		AdminService adminService =  new AdminServiceImpl();
-		adminreg = bundleContext.registerService(AdminService.class.getName(), adminService, null);
+		
+		DoctorService doctorService = new DoctorServiceImpl();
+		serviceRegistrationDoctor = bundleContext.registerService(DoctorService.class.getName(),doctorService, null);
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
-		System.out.println(" Admin Service Publisher Stop");
-		adminreg.unregister();
+		System.out.println("Doctor service stop");
+		serviceRegistrationDoctor.unregister();
 	}
 
 }
+

@@ -1,12 +1,10 @@
-package com.admin.service.publisher;
+package com.laboratory.service.publisher;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceRegistration;
 
 public class Activator implements BundleActivator {
 
-	ServiceRegistration adminreg;
 	private static BundleContext context;
 
 	static BundleContext getContext() {
@@ -14,16 +12,21 @@ public class Activator implements BundleActivator {
 	}
 
 	public void start(BundleContext bundleContext) throws Exception {
-		System.out.println(" Admin Service Publisher Start");
 		Activator.context = bundleContext;
-		AdminService adminService =  new AdminServiceImpl();
-		adminreg = bundleContext.registerService(AdminService.class.getName(), adminService, null);
+		this.registry();
+		System.out.println("Registry service Laboratory Started....");
 	}
 
+	private void registry() {
+		// TODO Auto-generated method stub
+		LaboratoryService service = new LaboratoryServiceImpl();
+		context.registerService(LaboratoryService.class, service, null);
+	
+	}
+	
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
-		System.out.println(" Admin Service Publisher Stop");
-		adminreg.unregister();
+		 System.out.println("Checkpoint Service Stopped");
 	}
 
 }
